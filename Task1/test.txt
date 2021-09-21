@@ -1,0 +1,8 @@
+clean	proc	far		;entry point from PC-DOS
+
+	push	ds		;save DS:0000 for final
+	xor	ax,ax		;return to PC-DOS
+	push	ax
+	mov	ax,data		;make our data segment
+	mov	es,ax		;addressable via ES register
+	call	infile		;get path and file spec.
